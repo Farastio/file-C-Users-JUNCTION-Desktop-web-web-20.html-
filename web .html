@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farastio's - Premium Online Store</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #dfefff, #ffffff);
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #004777;
+      font-size: 28px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links a {
+      color: #1f3c60;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #3399ff;
+    }
+
+    .welcome-section {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 20px;
+      background: url('https://www.transparenttextures.com/patterns/white-wall.png'),
+        linear-gradient(135deg, #f1faff 0%, #ffffff 100%);
+    }
+
+    .welcome-container {
+      max-width: 1000px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 102, 204, 0.1);
+      text-align: center;
+    }
+
+    .welcome-logo {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #003366;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .welcome-logo::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: #0099ff;
+      border-radius: 2px;
+    }
+
+    .welcome-slogan {
+      font-size: 1.5rem;
+      color: #6699cc;
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+
+    .welcome-message p {
+      color: #1f3c60;
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+
+    .explore-btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 35px;
+      background: linear-gradient(145deg, #0099ff, #66ccff);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease-in-out;
+      box-shadow: 0 6px 18px rgba(0, 153, 255, 0.3);
+    }
+
+    .explore-btn:hover {
+      background: #0077cc;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0, 102, 204, 0.3);
+    }
+
+    .features-section {
+      padding: 80px 20px;
+      background: linear-gradient(to bottom, #e6f3ff, #ffffff);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 50px;
+      color: #003366;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: #3399ff;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      color: #3399ff;
+      margin-bottom: 20px;
+    }
+
+    .feature-title {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #003366;
+    }
+
+    .feature-desc {
+      color: #4d6680;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background: rgba(0, 51, 102, 0.8);
+      backdrop-filter: blur(10px);
+      color: #e0e0e0;
+      padding: 60px 20px 30px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-column h3 {
+      color: #66ccff;
+      margin-bottom: 25px;
+      font-size: 1.1rem;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-column ul li a {
+      color: #cccccc;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: #ffffff;
+    }
+
+    .social-links a {
+      color: #ffffff;
+      font-size: 1.2rem;
+      margin-right: 15px;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #66ccff;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.9rem;
+      color: #bbbbbb;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        margin-top: 10px;
+      }
+
+      .welcome-logo {
+        font-size: 2.5rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
+      <a href="#" class="logo">Farastio's</a>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#"><i class="fas fa-user"></i> Account</a>
+        <a href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- WELCOME SECTION -->
+  <section class="welcome-section">
+    <div class="welcome-container">
+      <h1 class="welcome-logo">Farastio's</h1>
+      <p class="welcome-slogan">Premium Products. Unbeatable Experience.</p>
+      <div class="welcome-message">
+        <p>Welcome to Farastio's — your ultimate destination for quality products and exceptional service.</p>
+        <p>We're thrilled to have you here! Explore our curated collection and discover a world of possibilities tailored just for you.</p>
+        <p>Whether you're searching for the latest trends, timeless classics, or unique finds — our diverse range has something for everyone.</p>
+        <p>Thank you for choosing Farastio's — where quality meets care.</p>
+      </div>
+      <a href="#" class="explore-btn">Start Shopping <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="features-section">
+    <h2 class="section-title">Why Choose Farastio's</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-award"></i></div>
+        <h3 class="feature-title">Premium Quality</h3>
+        <p class="feature-desc">Carefully selected products meeting high standards of quality.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-shipping-fast"></i></div>
+        <h3 class="feature-title">Fast Delivery</h3>
+        <p class="feature-desc">Reliable partners ensure quick and safe delivery of your orders.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-headset"></i></div>
+        <h3 class="feature-title">24/7 Support</h3>
+        <p class="feature-desc">Friendly support team ready to help you at any time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Farastio's</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Help</h3>
+        <ul>
+          <li><a href="#">Customer Service</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns & Refunds</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> 123 Store Street, City</li>
+          <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+          <li><i class="fas fa-envelope"></i> info@farastios.com</li>
+        </ul>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 Farastio's. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
